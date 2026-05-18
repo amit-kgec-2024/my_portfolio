@@ -2,14 +2,32 @@
 
 import { motion } from "framer-motion";
 import { personalInfo, skills } from "@/data/portfolio";
+import Education from "./Education";
+import Interests from "./Interests";
 
-const CATEGORIES = ["Frontend", "Creative", "Backend", "DevOps", "Design"];
+const CATEGORIES = [
+  "Frontend",
+  "Creative",
+  "Backend",
+  "DevOps",
+  "Design",
+  "Mobile",
+  "Database",
+  "Languages",
+  "Tools",
+  "Payments",
+];
 const CAT_COLORS: Record<string, string> = {
   Frontend: "#C8F135",
   Creative: "#B09EFF",
   Backend: "#4AB8FF",
   DevOps: "#FF5C4A",
   Design: "#FFB347",
+  Mobile: "#7CFFB3",
+  Database: "#6BD0FF",
+  Languages: "#FFD166",
+  Tools: "#FF8A5B",
+  Payments: "#9B5CFF",
 };
 
 function SkillBar({ skill, i }: { skill: typeof skills[0]; index?: number; i: number }) {
@@ -129,6 +147,8 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+          <Education />
+          <Interests />
         </div>
 
         {/* Right: Skills */}

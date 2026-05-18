@@ -4,7 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { projects } from "@/data/portfolio";
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+type Project = (typeof projects)[number] & {
+  stats?: { stars?: number | string; views?: number | string };
+  github?: string;
+  live?: string;
+  icon?: string;
+};
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -48,8 +55,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             justifyContent: "center",
           }}
         >
-          <span style={{ fontSize: 32 }}>
-            {project.id === 1 ? "🌌" : project.id === 2 ? "📋" : project.id === 3 ? "🎨" : project.id === 4 ? "🎵" : project.id === 5 ? "📊" : "🏔️"}
+          <span style={{ fontSize: 32 }} role="img" aria-label={`${project.title} icon`}>
+            {project.icon ?? "🏔️"}
           </span>
         </motion.div>
 
@@ -120,8 +127,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", gap: 20 }}>
             {[
-              { label: "⭐", value: project.stats.stars },
-              { label: "🔗", value: project.stats.views },
+              { label: "⭐", value: project.stats?.stars ?? "—" },
+              { label: "🔗", value: project.stats?.views ?? "—" },
             ].map(s => (
               <span key={s.label} style={{ fontSize: 13, color: "#D4CFC4" }}>
                 {s.label} {typeof s.value === "number" ? s.value.toLocaleString() : s.value}
@@ -130,46 +137,50 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </div>
 
           <div style={{ display: "flex", gap: 12 }}>
-            <motion.a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              onClick={e => e.stopPropagation()}
-              style={{
-                width: 36, height: 36,
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 16,
-                textDecoration: "none",
-              }}
-            >
-              ⌥
-            </motion.a>
-            <motion.a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, background: project.color + "dd" }}
-              onClick={e => e.stopPropagation()}
-              style={{
-                padding: "8px 20px",
-                background: project.color + "20",
-                border: `1px solid ${project.color}40`,
-                borderRadius: 100,
-                color: project.color,
-                fontSize: 13,
-                fontWeight: 600,
-                textDecoration: "none",
-                transition: "all 0.2s ease",
-              }}
-            >
-              Live →
-            </motion.a>
+            {project.github ? (
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                onClick={e => e.stopPropagation()}
+                style={{
+                  width: 36, height: 36,
+                  borderRadius: "50%",
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 16,
+                  textDecoration: "none",
+                }}
+              >
+                ⌥
+              </motion.a>
+            ) : null}
+            {project.live ? (
+              <motion.a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, background: project.color + "dd" }}
+                onClick={e => e.stopPropagation()}
+                style={{
+                  padding: "8px 20px",
+                  background: project.color + "20",
+                  border: `1px solid ${project.color}40`,
+                  borderRadius: 100,
+                  color: project.color,
+                  fontSize: 13,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                Live →
+              </motion.a>
+            ) : null}
           </div>
         </div>
       </div>

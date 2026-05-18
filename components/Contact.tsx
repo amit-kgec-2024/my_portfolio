@@ -1,21 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { personalInfo } from "@/data/portfolio";
 
 export default function Contact() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = async () => {
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setSending(true);
-    await new Promise(r => setTimeout(r, 1800));
-    setSending(false);
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
+
+    emailjs
+      .sendForm(
+        "service_376k5eu",
+        "template_z3ikrfn",
+        formRef.current as HTMLFormElement,
+        "PpfGx2sy5pjNVFUL2"
+      )
+      .then(() => {
+        console.log("Email sent");
+        setSending(false);
+        setSent(true);
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((err: unknown) => {
+        console.log(err);
+        setSending(false);
+      });
   };
 
   const inputStyle = {
@@ -86,8 +103,8 @@ export default function Contact() {
                 {[
                   { icon: "✉️", label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
                   { icon: "📍", label: "Location", value: personalInfo.location },
-                  { icon: "🐙", label: "GitHub", value: "@alexrivera", href: personalInfo.socials.github },
-                  { icon: "🐦", label: "Twitter", value: "@alex_builds", href: personalInfo.socials.twitter },
+                  { icon: "🐙", label: "GitHub", value: "@amit-kgec-2024", href: personalInfo.socials.github },
+                  { icon: "🐦", label: "Twitter", value: "@mandal_ami40889", href: personalInfo.socials.twitter },
                 ].map(item => (
                   <motion.div
                     key={item.label}
@@ -124,7 +141,9 @@ export default function Contact() {
           </div>
 
           {/* Right: Form */}
-          <motion.div
+          <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -217,7 +236,7 @@ export default function Contact() {
                 </div>
 
                 <motion.button
-                  onClick={handleSubmit}
+                  type="submit"
                   whileHover={{ scale: 1.02, backgroundColor: "#A8D020" }}
                   whileTap={{ scale: 0.97 }}
                   disabled={sending}
@@ -254,7 +273,7 @@ export default function Contact() {
                 </motion.button>
               </div>
             )}
-          </motion.div>
+          </motion.form>
         </div>
       </div>
 
