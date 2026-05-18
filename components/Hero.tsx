@@ -77,7 +77,7 @@ export default function Hero() {
 
         /* FIXED TOP SPACE */
         paddingTop: "90px",
-        paddingBottom: "40px",
+        paddingBottom: "140px",
         paddingLeft: "20px",
         paddingRight: "20px",
       }}
@@ -176,7 +176,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
           style={{
-            fontSize: "clamp(52px, 10vw, 140px)",
+            fontSize: "clamp(50px, 9vw, 100px)",
             fontWeight: 800,
             lineHeight: 0.9,
             color: "#F5F3EE",
@@ -192,10 +192,10 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.1 }}
           style={{
-            fontSize: "clamp(52px, 10vw, 140px)",
+            fontSize: "clamp(50px, 9vw, 100px)",
             fontWeight: 800,
             lineHeight: 0.9,
-            marginBottom: "28px",
+            marginBottom: "15px",
             letterSpacing: "-0.05em",
             background: "linear-gradient(135deg,#C8F135,#4AB8FF)",
             WebkitBackgroundClip: "text",
@@ -204,6 +204,7 @@ export default function Hero() {
         >
           {personalInfo.name.split(" ")[1]}
         </motion.h1>
+
 
         {/* Roles */}
         <motion.div
@@ -240,7 +241,6 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-
         {/* Content */}
         <div
           className="hero-layout"
@@ -302,7 +302,9 @@ export default function Hero() {
           </div>
 
           {/* Right */}
-          <div className="stats-grid">
+          <div
+            className="stats-grid"
+          >
             {stats.map((stat) => (
               <div
                 key={stat.label}

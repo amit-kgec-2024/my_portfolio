@@ -163,8 +163,8 @@ export default function Navbar() {
                   fontWeight: 600,
                   transition: "color 0.2s ease",
                 }}
-                onMouseEnter={(e) => e.target.style.color = "#C8F135"}
-                onMouseLeave={(e) => e.target.style.color = "#F5F3EE"}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#C8F135")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#F5F3EE")}
               >
                 {link.label}
               </a>
