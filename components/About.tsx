@@ -57,7 +57,7 @@ function SkillBar({ skill, i }: { skill: typeof skills[0]; index?: number; i: nu
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: "120px 32px", maxWidth: 1200, margin: "0 auto" }}>
+    <section id="about" style={{ padding: "20px 20px" }}>
       <div style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",

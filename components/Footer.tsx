@@ -7,11 +7,9 @@ export default function Footer() {
   return (
     <footer style={{
       borderTop: "1px solid rgba(255,255,255,0.06)",
-      padding: "40px 32px",
+      padding: "20px 20px",
     }}>
       <div style={{
-        maxWidth: 1200,
-        margin: "0 auto",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -19,7 +17,7 @@ export default function Footer() {
         gap: 16,
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <span style={{ fontSize: 18, fontWeight: 700, color: "#C8F135", fontFamily: "monospace" }}>AR.</span>
+          <span style={{ fontSize: 18, fontWeight: 700, color: "#C8F135", fontFamily: "monospace" }}>AM.</span>
           <span style={{ fontSize: 14, color: "#D4CFC4" }}>
             © {new Date().getFullYear()} {personalInfo.name}. Crafted with ♥
           </span>

@@ -8,13 +8,13 @@ export default function Experience() {
     <section
       id="experience"
       style={{
-        padding: "120px 32px",
+        padding: "20px 20px",
         background: "rgba(255,255,255,0.01)",
         borderTop: "1px solid rgba(255,255,255,0.05)",
         borderBottom: "1px solid rgba(255,255,255,0.05)",
       }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -35,7 +35,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        padding: "120px 32px",
+        padding: "20px 20px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
       }}
     >

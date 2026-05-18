@@ -5,7 +5,7 @@ import { testimonials } from "@/data/portfolio";
 
 export default function Testimonials() {
   return (
-    <section style={{ padding: "120px 32px", maxWidth: 1200, margin: "0 auto" }}>
+    <section style={{ padding: "20px 20px" }}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

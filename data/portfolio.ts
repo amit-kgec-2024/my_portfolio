@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "amit.kgec.2024@gmail.com",
   location: "Bangalore, India",
   available: true,
-  bio: "I'm a full-stack developer with 6+ years of experience building immersive web experiences. Obsessed with animation, performance, and pushing the boundaries of what's possible in the browser.",
+  bio: "Software Developer with hands-on experience in building scalable mern-stack applications using React, Node.js, and MySQL. Strong in API integration, UI performance optimization, and modular architecture. Fast learner with strong problem-solving and team collaboration skills.",
   socials: {
     github: "https://github.com",
     twitter: "https://twitter.com",
@@ -29,8 +29,9 @@ export const skills = [
 
 export const techStack = [
   "React", "Next.js", "TypeScript", "Tailwind", "Framer Motion",
-  "Node.js", "PostgreSQL", "Redis", "AWS", "Figma", "GSAP",
-  "Three.js", "GraphQL", "Prisma", "Docker", "Vercel"
+  "Node.js", "PostgreSQL", "Angular.js", "Vue.js", "HTML", "CSS",
+  "Three.js", "MySql", "MongoDB", "Docker", "Vercel", "Material UI", 
+  "React Native", "Flutter", "C Langauge", "C++", "Spring Boot"
 ];
 
 export const projects = [
@@ -177,8 +178,8 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { label: "Projects Shipped", value: "47+", color: "#C8F135" },
-  { label: "GitHub Stars", value: "12K+", color: "#4AB8FF" },
-  { label: "Years Experience", value: "6+", color: "#B09EFF" },
-  { label: "Happy Clients", value: "30+", color: "#FF5C4A" },
+  { label: "Projects Shipped", value: "17+", color: "#C8F135" },
+  { label: "GitHub Stars", value: "1+", color: "#4AB8FF" },
+  { label: "Years Experience", value: "2+", color: "#B09EFF" },
+  { label: "Happy Clients", value: "10+", color: "#FF5C4A" },
 ];

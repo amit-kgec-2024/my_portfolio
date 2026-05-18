@@ -182,7 +182,7 @@ export default function Projects() {
   const filtered = filter === "featured" ? projects.filter(p => p.featured) : projects;
 
   return (
-    <section id="projects" style={{ padding: "120px 32px", maxWidth: 1200, margin: "0 auto" }}>
+    <section id="projects" style={{ padding: "20px 20px", margin: "0 auto" }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
