@@ -1,0 +1,73 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.2"
+  baseProfile="tiny-ps"
+  viewBox="0 0 678 678"
+  width="678"
+  height="678"
+>
+  <title>Animated Logo</title>
+
+  <style>
+    .logo-main {
+      fill: #c8f135;
+      animation: pulse 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .logo-inner {
+      fill: #c8f135;
+      animation: float 3s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+        filter: drop-shadow(0 0 0px #c8f135);
+      }
+
+      50% {
+        transform: scale(1.03);
+        opacity: 1;
+        filter: drop-shadow(0 0 25px #c8f135);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0.9;
+        filter: drop-shadow(0 0 0px #c8f135);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style>
+
+  <g id="Layer_2">
+    <g id="Layer_1-2">
+      <path
+        class="logo-main"
+        fill-rule="evenodd"
+        d="m550 74c70.01 55.85 115.05 137.15 125.27 226.13c10.22 88.97-15.22 178.37-70.76 248.64c-55.53 70.26-136.63 115.67-225.56 126.29c-88.93 10.62-178.44-14.42-248.95-69.63c-79.14-61.99-130-158.42-130-266.76c0-63.77 18-126.24 51.93-180.24c33.93-53.99 82.42-97.3 139.89-124.96c57.46-27.65 121.57-38.52 184.93-31.35c63.37 7.17 123.42 32.08 173.25 71.88zm-3.76 432.45l-148.72-398h-113.52c-49.55 132.67-99.16 265.44-148.81 398.31h103.61l25.2-72.94h152.41c8.43 24.37 16.82 48.65 25.17 72.83c3.68 0.5 102.8 0.35 104.66-0.2z"
+      />
+
+      <path
+        class="logo-inner"
+        d="m390.88 359.33c-2 0.6-95.09 0.85-101 0.34c-0.01-0.01-0.03-0.02-0.04-0.04c-0.01-0.01-0.02-0.03-0.04-0.04c-0.01-0.01-0.02-0.03-0.03-0.04c-0.01-0.01-0.02-0.03-0.03-0.04c0-0.07-0.1-0.17-0.08-0.23c16.63-48.07 33.26-96.14 49.9-144.21c0.23-0.67 0.51-1.33 0.77-2l0.42-0.08l50.13 146.34z"
+      />
+    </g>
+  </g>
+</svg>
